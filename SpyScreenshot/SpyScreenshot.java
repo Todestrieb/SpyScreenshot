@@ -74,10 +74,24 @@ public class SpyScreenshot {
 		saveImage(screenshot);
 	}
 	
+	/**
+	 * Create destination directory if does not exist
+	 */
+	private static void createDstDirIfNec() {
+		
+		File dstDir = new File(DESTINATION_DIRECTORY);
+		if (! dstDir.exists()) {
+			
+			dstDir.mkdirs();
+		}
+	}
+	
 	public static void main(String[] args) throws Exception {
 		
 		System.out.println("SpyScreenshot by M.Kumst");
 		System.out.println("Use this software only for legal purposes!");
+		
+		createDstDirIfNec();
 		
 		for (;;) {
 			
